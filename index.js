@@ -98,7 +98,6 @@ class BrowserFingerprint {
     const date = new Date();
     date.setTime(date.getTime() + this.cookieDays * 24 * 60 * 60 * 1000);
     const expires = `expires=${date.toUTCString()}`;
-    // Remove domain specification to set cookie on current domain
     document.cookie = `${this.cookieName}=${value};${expires};path=/;SameSite=Lax`;
   }
 
@@ -118,7 +117,7 @@ class BrowserFingerprint {
   }
 
   async verifyApiKey() {
-    // Implement API key verification logic here
+    // TODO: Implement API key verification logic here
     return true;
   }
 
