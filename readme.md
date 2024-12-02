@@ -1,6 +1,6 @@
 # Browser Fingerprinting
 
-A simple robust browser fingerprinting library for tracking users across sessions and domains.
+A simple browser fingerprinting library for tracking users across sessions and domains.
 
 ## Features
 
