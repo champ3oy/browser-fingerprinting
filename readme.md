@@ -37,7 +37,7 @@ Fingerprint.load({
 
 ## Components
 
-The library uses these stable components for fingerprinting:
+components used for fingerprinting:
 
 - Hardware info (CPU cores, memory, GPU)
 - Browser characteristics
@@ -50,7 +50,3 @@ The library uses these stable components for fingerprinting:
 ## Example
 
 Check [example.html](example.html)
-
-## License
-
-MIT License
