@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Fingerprint Demo</title>
+  </head>
+  <body>
+    <div id="result"></div>
+
+    <script src="/index.js"></script>
+    <script>
+      // Initialize fingerprinting
+      Fingerprint.load({
+        apiKey: 123,
+        debug: true, // Enable debug logging
+        timeout: 30000, // Timeout in milliseconds
+      })
+        .then((bf) => {
+          return bf.get();
+        })
+        .then((result) => {
+          // result.visitorId is your main fingerprint hash
+          document.getElementById("result").innerHTML = `
+            <h3>Fingerprint Results:</h3>
+            <p>Visitor ID: ${result.visitorId}</p>
+            <h4>Component Details:</h4>
+            <pre>${JSON.stringify(result.components, null, 2)}</pre>
+        `;
+
+          // You can inspect individual components
+          result.components.forEach((component) => {
+            console.log(`${component.key}:`, component.value);
+          });
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    </script>
+  </body>
+</html>
